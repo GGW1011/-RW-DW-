@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sherry &amp; Dean</title>
+  <meta
+    name="description"
+    content="Sherry and Dean's little corner of the internet."
+  >
+
+  <link rel="stylesheet" href="https://use.typekit.net/mpq4daa.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="回到首页">
+      <span class="wordmark-name">Sherry &amp; Dean</span>
+    </a>
+
+    <p class="header-note">A little archive of us</p>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo-frame">
+        <div class="hero-photo-placeholder">
+          <img
+            class="hero-photo"
+            src="assets/images/wedding-photo.jpg"
+            alt="我们的结婚照"
+          >
+        </div>
+      </div>
+
+      <div class="hero-caption">
+        <p class="eyebrow">OUR LITTLE WORLD <span>✧</span> EST. FOREVER</p>
+        <h1 id="hero-title">我们的小小世界</h1>
+        <p class="hero-subtitle">从这里，开始记录属于我们的故事。</p>
+      </div>
+
+      <a class="scroll-link" href="#chapters">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <div class="ornament-divider" aria-hidden="true">✧</div>
+
+    <section class="chapters" id="chapters" aria-labelledby="chapters-title">
+      <div class="section-heading">
+        <p class="eyebrow">THE STORY SO FAR</p>
+        <h2 id="chapters-title">我们的生活片段</h2>
+        <p>从这里，走进属于我们的四个小章节。</p>
+      </div>
+
+      <nav class="chapter-grid" aria-label="网站章节">
+        <button
+          class="chapter-card"
+          type="button"
+          data-chapter="story"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">01</span>
+          <span class="chapter-flourish" aria-hidden="true">❧</span>
+          <span class="chapter-title">我们的故事</span>
+          <span class="chapter-subtitle">OUR STORY</span>
+          <span class="chapter-open">OPEN CHAPTER</span>
+        </button>
+
+        <button
+          class="chapter-card"
+          type="button"
+          data-chapter="memories"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">02</span>
+          <span class="chapter-flourish" aria-hidden="true">✧</span>
+          <span class="chapter-title">回忆</span>
+          <span class="chapter-subtitle">MEMORIES</span>
+          <span class="chapter-open">OPEN CHAPTER</span>
+        </button>
+
+        <button
+          class="chapter-card"
+          type="button"
+          data-chapter="wedding"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">03</span>
+          <span class="chapter-flourish" aria-hidden="true">❦</span>
+          <span class="chapter-title">婚礼</span>
+          <span class="chapter-subtitle">THE WEDDING</span>
+          <span class="chapter-open">OPEN CHAPTER</span>
+        </button>
+
+        <button
+          class="chapter-card"
+          type="button"
+          data-chapter="home"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">04</span>
+          <span class="chapter-flourish" aria-hidden="true">✧</span>
+          <span class="chapter-title">家和家人</span>
+          <span class="chapter-subtitle">HOME &amp; FAMILY</span>
+          <span class="chapter-open">OPEN CHAPTER</span>
+        </button>
+      </nav>
+    </section>
+
+    <dialog
+      class="chapter-dialog"
+      id="chapter-dialog"
+      aria-labelledby="dialog-title"
+    >
+      <button class="dialog-close" type="button" aria-label="关闭">×</button>
+
+      <p class="eyebrow">A LITTLE CHAPTER</p>
+      <span class="dialog-flourish" aria-hidden="true">❧</span>
+
+      <h2 id="dialog-title"></h2>
+      <p class="dialog-copy" id="dialog-copy"></p>
+
+      <button class="dialog-return" type="button">回到章节目录</button>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-rule" aria-hidden="true">✧</div>
+    <p class="footer-monogram">Sherry <span>&amp;</span> Dean</p>
+    <p>MADE WITH LOVE, FOR SHERRY &amp; DEAN</p>
+    <a class="back-to-top" href="#top">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>
