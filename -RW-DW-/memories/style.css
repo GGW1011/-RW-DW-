@@ -1,0 +1,232 @@
+.rd-memory-page {
+  --rd-cream: #e8dfcc;
+  --rd-muted: #cfc5ae;
+  --rd-gold: #c2a778;
+  --rd-border: rgba(218, 199, 159, 0.4);
+
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  color: var(--rd-cream);
+  font-family: inherit;
+}
+
+.rd-memory-page a,
+.rd-memory-page a:visited,
+.rd-memory-page a:hover,
+.rd-memory-page a:focus {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.rd-memory-header {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--rd-border);
+}
+
+.rd-memory-back,
+.rd-memory-brand,
+.rd-memory-footer {
+  color: #d3c4a5;
+  font-size: 0.95rem;
+}
+
+.rd-memory-panel {
+  margin: 34px auto;
+  padding: clamp(24px, 4vw, 48px);
+  background: rgba(75, 81, 61, 0.94);
+  border: 1px solid rgba(218, 199, 159, 0.5);
+}
+
+.rd-memory-intro {
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.rd-memory-kicker,
+.rd-memory-date {
+  color: var(--rd-gold);
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.rd-memory-intro h1 {
+  margin: 12px 0;
+  color: #eee6d6;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.rd-memory-intro > p:last-child {
+  color: var(--rd-muted);
+  line-height: 1.8;
+}
+
+.rd-memory-list {
+  position: relative;
+  display: grid;
+  gap: 24px;
+}
+
+.rd-memory-list::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 1px;
+  background: var(--rd-border);
+}
+
+.rd-memory-entry {
+  position: relative;
+  padding-left: 32px;
+}
+
+.rd-memory-entry::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 1px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--rd-gold);
+  border-radius: 50%;
+  background: #4b513d;
+}
+
+.rd-memory-date {
+  margin: 0 0 9px;
+}
+
+.rd-memory-photo-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+  gap: 18px;
+}
+
+.rd-memory-photo-frame {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(232, 223, 204, 0.72);
+  background: rgba(38, 38, 31, 0.22);
+}
+
+.rd-memory-photo-frame img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 210px;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
+
+.rd-memory-note {
+  padding: clamp(18px, 2vw, 26px);
+  border: 1px solid rgba(218, 199, 159, 0.32);
+  background: rgba(45, 43, 34, 0.2);
+}
+
+.rd-memory-note-label,
+.rd-memory-note h2 {
+  display: none;
+}
+
+.rd-memory-note > p:last-child,
+.rd-memory-diary-space p {
+  margin-top: 0;
+  color: #d1c7b1;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+.rd-memory-diary {
+  min-height: 220px;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid rgba(218, 199, 159, 0.4);
+  border-left: 3px solid #89604e;
+  background: rgba(232, 223, 204, 0.08);
+}
+
+.rd-memory-diary h2 {
+  margin: 0 0 14px;
+  color: #eee6d6;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.rd-memory-diary .rd-memory-date {
+  margin-bottom: 14px;
+}
+
+.rd-memory-diary-space {
+  min-height: 100px;
+}
+
+.rd-memory-placeholder {
+  color: rgba(232, 223, 204, 0.58) !important;
+  font-size: 0.95rem;
+}
+
+.rd-memory-footer {
+  padding: 22px 0 34px;
+  border-top: 1px solid var(--rd-border);
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .rd-memory-page {
+    width: min(calc(100% - 28px), 600px);
+  }
+
+  .rd-memory-header {
+    min-height: 66px;
+  }
+
+  .rd-memory-panel {
+    margin: 24px auto;
+    padding: 24px 18px;
+  }
+
+  .rd-memory-intro {
+    margin-bottom: 30px;
+  }
+
+  .rd-memory-photo-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rd-memory-photo-frame {
+    margin: 0 auto;
+  }
+
+  .rd-memory-entry {
+    padding-left: 25px;
+  }
+}
+.rd-memory-photo-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.rd-memory-photo-frame img {
+  max-height: 260px;
+}
+
+.rd-memory-list {
+  gap: 18px;
+}
