@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我们的故事 | Sherry &amp; Dean</title>
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      color: var(--parchment, #eee6d7);
+      font-family: var(--font-pair, "Beverly Drive Right", serif);
+    }
+
+    .rd-story-header,
+    .rd-story-footer {
+      width: min(1220px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rd-story-header {
+      min-height: 82px;
+      border-bottom: 1px solid var(--line, rgba(194, 168, 122, 0.48));
+    }
+
+    .rd-story-header a,
+    .rd-story-footer a {
+      color: var(--muted-cream, #c8bca6);
+      text-decoration: none;
+    }
+
+    .rd-story-wordmark {
+      color: var(--muted-cream, #c8bca6);
+    }
+
+    .rd-story-shell {
+      width: min(960px, calc(100% - 32px));
+      margin: 54px auto 72px;
+      padding: clamp(28px, 6vw, 68px);
+      box-sizing: border-box;
+      color: var(--parchment, #eee6d7);
+      background: rgba(75, 78, 60, 0.95);
+      border: 1px solid var(--line, rgba(194, 168, 122, 0.48));
+    }
+
+    .rd-story-intro {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .rd-story-eyebrow {
+      margin: 0 0 12px;
+      color: var(--antique-gold, #b9a06a);
+      letter-spacing: 0.08em;
+    }
+
+    .rd-story-intro h1 {
+      margin: 0 0 14px;
+      color: var(--parchment, #eee6d7);
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: normal;
+    }
+
+    .rd-story-lead {
+      margin: 0;
+      color: var(--muted-cream, #c8bca6);
+    }
+
+    .rd-story-timeline {
+      position: relative;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      grid-auto-flow: row !important;
+      gap: 16px;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .rd-story-season {
+      margin: 36px 0 8px 48px;
+      color: var(--antique-gold, #b9a06a);
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+    }
+
+    .rd-story-season:first-child {
+      margin-top: 0;
+    }
+
+    .rd-story-event {
+      position: relative;
+      display: block !important;
+      width: auto;
+      min-width: 0;
+      margin: 0 0 0 48px;
+      border: 1px solid var(--line, rgba(194, 168, 122, 0.48));
+      background: rgba(48, 36, 28, 0.38);
+      box-sizing: border-box;
+    }
+
+    .rd-story-event::before {
+      position: absolute;
+      top: 24px;
+      left: -41px;
+      width: 12px;
+      height: 12px;
+      border: 1px solid var(--muted-cream, #c8bca6);
+      border-radius: 50%;
+      background: #555844;
+      content: "";
+    }
+
+    .rd-story-timeline::before {
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 13px;
+      width: 1px;
+      background: var(--line, rgba(194, 168, 122, 0.48));
+      content: "";
+    }
+
+    .rd-story-event summary {
+      display: grid !important;
+      grid-template-columns: 140px minmax(0, 1fr) 100px;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      min-width: 0;
+      padding: 18px 22px;
+      box-sizing: border-box;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .rd-story-event summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .rd-story-date {
+      color: var(--antique-gold, #b9a06a);
+      font-style: italic;
+    }
+
+    .rd-story-title {
+      min-width: 0;
+      color: var(--parchment, #eee6d7);
+      font-size: 1.1rem;
+      overflow-wrap: anywhere;
+    }
+
+    .rd-story-prompt {
+      color: var(--muted-cream, #c8bca6);
+      font-size: 0.82rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .rd-story-event[open] summary {
+      border-bottom: 1px solid var(--line, rgba(194, 168, 122, 0.48));
+    }
+
+    .rd-story-copy {
+      padding: 8px 22px 20px;
+      color: var(--muted-cream, #c8bca6);
+      line-height: 1.9;
+      overflow-wrap: anywhere;
+    }
+
+    .rd-story-copy p {
+      margin: 10px 0;
+    }
+
+    .rd-story-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rd-story-speaker {
+      color: var(--parchment, #eee6d7);
+    }
+
+    .rd-story-unfinished {
+      color: var(--antique-gold, #b9a06a);
+      font-style: italic;
+    }
+
+    .rd-story-scene {
+      margin: 24px 0 8px;
+      color: var(--antique-gold, #b9a06a);
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .rd-story-footer {
+      justify-content: center;
+      min-height: 64px;
+      border-top: 1px solid var(--line, rgba(194, 168, 122, 0.48));
+    }
+
+    @media (max-width: 600px) {
+      .rd-story-header,
+      .rd-story-footer {
+        width: calc(100% - 32px);
+      }
+
+      .rd-story-shell {
+        width: calc(100% - 20px);
+        padding: 30px 16px;
+      }
+
+      .rd-story-season,
+      .rd-story-event {
+        margin-left: 36px;
+      }
+
+      .rd-story-event::before {
+        left: -30px;
+      }
+
+      .rd-story-timeline::before {
+        left: 9px;
+      }
+
+      .rd-story-event summary {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 6px 12px;
+        padding: 16px;
+      }
+
+      .rd-story-date {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .rd-story-title {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .rd-story-prompt {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+
+      .rd-story-copy {
+        padding: 8px 16px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="rd-story-header">
+    <a href="../index.html">← 回到首页</a>
+    <span class="rd-story-wordmark">Sherry &amp; Dean</span>
+  </header>
+
+  <main class="rd-story-shell">
+    <section class="rd-story-intro">
+      <p class="rd-story-eyebrow">OUR STORY LINE</p>
+      <h1>我们的故事</h1>
+      <p class="rd-story-lead">以下皆为我在剧集中出现片段并非完整故事</p>
+    </section>
+
+    <section class="rd-story-timeline" aria-label="Sherry 与 Dean 的故事时间线">
+
+      <h2 class="rd-story-season">SEASON FOUR · 2008—2009</h2>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2008.05</span>
+          <span class="rd-story-title">Dean 坠入地狱</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>2008年5月左右，Dean 死亡并坠入地狱。</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2008.09.18</span>
+          <span class="rd-story-title">Dean 回来了</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>我从无线电里听见：“Dean is saved.” Dean 复活了。</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2008.09.21</span>
+          <span class="rd-story-title">Dean 遇见 Castiel</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Dean 第一次见到 Castiel。</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2008.09.30</span>
+          <span class="rd-story-title">Castiel 的任务</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Castiel 告诉 Dean，他的任务是阻止封印被解除。否则六十六道封印都会解开，Lucifer 就会降临。</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2008.11.05</span>
+          <span class="rd-story-title">Anna must die</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Uriel 和 Castiel 一起去找 Dean，告诉他天堂的命令是：Anna must die.</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2009.02.10 · S4E16</span>
+          <span class="rd-story-title">Sariel 开始怀疑天堂</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Uriel 和 Castiel 找到 Dean。Sariel 出现，问 Castiel：“Is he done?”</p>
+          <p>“Not yet; he’s on it.”</p>
+          <p>“Raphael is urging.”</p>
+          <p>“I know.”</p>
+
+          <p>这是 Sariel 第一次察觉到不对，开始产生反叛天堂的念头。她很庆幸 Castiel 也察觉了异常。Castiel 还不能像她一样直接说服自己反叛，但这已经足以让 Sariel 确认自己的判断。</p>
+
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Something is wrong with heaven.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Then we need to find out.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“That’s not our business.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Then just follow nonsense orders? Cas, it’s meaningless.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“I don’t know…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“It’s ok, I give you time to figure it out.”</p>
+
+          <p>Castiel 和 Uriel 对峙时，Uriel 说道：“No will, no wrath! No… god.” Sariel 使用天使之刃刺向 Uriel。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“There’s still me.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Am I late?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“A little bit…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Don’t thank me; we’ve got to go.”</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S4E20</span>
+          <span class="rd-story-title">与 Castiel 失联</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Castiel 被天堂召回。Sariel 暂时也无法联系上他。</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S4E21</span>
+          <span class="rd-story-title">Castiel 放走 Sam</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Castiel 放走了被 Dean 和 Bobby 关在地下室的 Sam。Sam 消失在转角后，Sariel 出现，看着 Castiel。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“You sure that’s a good idea?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Those are my orders.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Orders? You’ve seen what he’s done.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“You should go…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Don’t go too far.”</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">2009.04</span>
+          <span class="rd-story-title">天启开始 · Lucifer 现世</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>天启开始，Lucifer 现世。</p>
+          <p>第四季里，Sariel 还没有见过 Dean。</p>
+        </div>
+      </details>
+
+      <h2 class="rd-story-season">SEASON FIVE · THROUGH S5E21</h2>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S5E1</span>
+          <span class="rd-story-title">Michael 的容器</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Zachariah 逼 Dean 成为 Michael 的容器。</p>
+          <p><strong class="rd-story-speaker">Zachariah：</strong>“I just started.”</p>
+          <p>Sariel 和 Castiel 冲进来，杀死在场的所有天使，只留下 Zachariah。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“How do you…?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Alive? Thank her.” Castiel 指向 Sariel。</p>
+          <p>Sariel 挥了挥手。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“You scared, huh… Now, put these boys back together and go. I won’t ask twice.”</p>
+          <p>Zachariah 离开。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“You two need to be more careful.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Who the hell is she…?”</p>
+          <p>Sariel 正要开口，Castiel 先解释：“She’s my sister; we were born together. Just like you two siblings.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Exactly. Lucifer is circling his vessel; we are running out of time.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Cas, how did you?”</p>
+          <p>Dean 话还没问完，Sariel 和 Castiel 就已经离开了。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“These angels…”</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S5E3</span>
+          <span class="rd-story-title">Sariel 找到 Castiel</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>S4 结尾，Raphael 杀死 Castiel。Cas 需要 Dean 帮忙找到他；God 也在人间。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Where’s your sister?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“She’s not able to connect with me right now. If she’s here, other angels will know.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Hi!”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Shit! What the….”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“You know it’s really easy to track you, right?” Sariel 指了指 Castiel。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“How…?”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Telepathy. Spooky, isn’t it?”</p>
+          <p class="rd-story-unfinished">未完待续</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S5E5</span>
+          <span class="rd-story-title">Dean 遇见未来的自己</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Dean 穿越到了 Lucifer 附身 Sam 的未来。2009年的 Dean 遇见了2014年的首领 Dean，首领 Dean 把他绑到了仓库。</p>
+
+          <p><strong class="rd-story-speaker">2014 Dean：</strong>“I’m you.”</p>
+          <p><strong class="rd-story-speaker">2009 Dean：</strong>“Name one thing people don’t know.”</p>
+          <p><strong class="rd-story-speaker">2014 Dean：</strong>“Fine.”</p>
+
+          <p>Sariel 走进来，向 Dean 打招呼。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Oh, hey, babe.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Babe? Aren’t you Cas’s sister?”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Yeah, I’m your wife, man.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Wife?! Wait, can’t you just send me back?”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“I wish, but I can’t change anything. I suggest you go check on Cas.”</p>
+          <p><strong class="rd-story-speaker">2014 Dean：</strong>“Let’s go, baby.”</p>
+          <p><strong class="rd-story-speaker">2009 Dean：</strong>“DICK!”</p>
+
+          <p>Dean 回到现实。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Thanks, Cas.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Thank her.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“We have an agreement.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“You know… never mind. I didn’t know your name yet.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Sariel.”</p>
+          <p class="rd-story-unfinished">这一段还没写完，未完待续</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S5E13 · 2010</span>
+          <span class="rd-story-title">回到 1978 年</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <p>Castiel 把 Winchester 兄弟送回 1978 年，Sariel 也在那里。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“She is in 1978.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“What? Why 1978? I wasn’t even born yet.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“You won’t be… if she kills your parents.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“What?”</p>
+
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Take others with me; it’s gonna weaken me.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“No worries. I can take one of them.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Ready?”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Bend your knees.”</p>
+          <p>Sariel 和 Castiel 把他们带回 1978 年。</p>
+
+          <p><strong class="rd-story-speaker">Sam：</strong>“Did we make it?”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Unless they’re bringing pintos back into production.”</p>
+          <p>Sam 和 Dean 呼唤 Castiel。Castiel 醒来后，Sariel 确认他没事。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“I’m fine. Better than I expected.”</p>
+          <p>Castiel 又昏了过去。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“He’s breathing… sort of.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“I’ll go take care of him. You boys can go; trust me.”</p>
+
+          <h3 class="rd-story-scene">回到现在</h3>
+          <p>Winchester 兄弟回来了。Sariel 把 Castiel 带回旅馆，Sam 也上前帮忙。</p>
+          <p><strong class="rd-story-speaker">Sam：</strong>“We got you.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Son of a bitch, you guys made it!”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“I need to rest. I’m exhausted.”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“I… did? Surprise.” Castiel 随后又昏了过去。</p>
+          <p>Sam 和 Dean 把 Castiel 和 Sariel 扶到床上。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Well, this is it.”</p>
+          <p><strong class="rd-story-speaker">Sam：</strong>“This is what?”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Team Free Will. One ex-blood junkie; one dropout with six bucks to his name, and two black-out angels. It’s awesome.”</p>
+          <p class="rd-story-unfinished">未完待续</p>
+        </div>
+      </details>
+
+      <details class="rd-story-event">
+        <summary>
+          <span class="rd-story-date">S5E21</span>
+          <span class="rd-story-title">瘟疫之戒</span>
+          <span class="rd-story-prompt">点开阅读</span>
+        </summary>
+        <div class="rd-story-copy">
+          <h3 class="rd-story-scene">医院</h3>
+          <p>Castiel 给 Sam 和 Dean 打电话，Dean 接起电话。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Dean?”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“We all thought you were dead. Where the hell are you, man?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“A hospital. Sariel is here to take care of me.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“Are you okay?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“No.”</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“You want to elaborate?”</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“I just…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Let me: you just woke up.”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“The doctors are surprised; they thought he was brain-dead.”</p>
+          <p>Castiel 在 Van Nuys 之后，浑身是血、失去意识地出现在 Delacroix 附近的一艘捕虾船上。</p>
+          <p>Dean 告诉他们，Crowley 找到了打开 Satan’s box 的办法，想让他们赶过去。</p>
+          <p>Sariel 解释 Castiel 现在实际上是一个人类，她必须照顾他。她还要负责照看他、付这些杂七杂八的账单。</p>
+          <p><strong class="rd-story-speaker">Castiel：</strong>“Hey. I’m not crap stuff.” Castiel 小声说道。</p>
+
+          <h3 class="rd-story-scene">对付 Pestilence</h3>
+          <p>Castiel 和 Sariel 赶去帮助 Winchester 兄弟。门被踹开，两位天使走了进来。</p>
+          <p><strong class="rd-story-speaker">Dean：</strong>“How’d you guys get here?!”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“We took a bus. Don’t worry, I…”</p>
+          <p>Castiel 突然吐血，跪倒在地上。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Hey.”</p>
+          <p><strong class="rd-story-speaker">Pestilence：</strong>“Small angel…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Shut up.”</p>
+          <p>Sariel 打了个响指，冻住 Pestilence；随后转身杀死他身边的恶魔。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Are you giving the ring or not?”</p>
+          <p><strong class="rd-story-speaker">Pestilence：</strong>“You…”</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“I’ll take that as a yes.” Sariel 切下 Pestilence 戴着戒指的手指。</p>
+
+          <h3 class="rd-story-scene">回到 Bobby 家</h3>
+          <p>大家发现 Bobby 和 Crowley 做了交易。Sariel 用两根食指碰了碰，暗示她在问 Bobby 和 Crowley 是不是接吻了。</p>
+          <p><strong class="rd-story-speaker">Bobby：</strong>“NO!!!”</p>
+          <p>Crowley 咳嗽了一声，拿出那张他亲吻 Bobby 的照片给大家看。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Why do you use a picture?”</p>
+          <p><strong class="rd-story-speaker">Crowley：</strong>“Why do you use your tongue?”</p>
+          <p>所有人都用奇怪的表情看向 Bobby。</p>
+          <p><strong class="rd-story-speaker">Sariel：</strong>“Okay, that’s enough.” Sariel 终于受不了了。</p>
+        </div>
+      </details>
+
+    </section>
+  </main>
+
+  <footer class="rd-story-footer">
+    <a href="../index.html">RETURN HOME</a>
+  </footer>
+
+</body>
+</html>

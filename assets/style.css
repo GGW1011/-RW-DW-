@@ -15,7 +15,6 @@
   --ink: #30241c;
   --muted-cream: #c8bca6;
   --line: rgba(194, 168, 122, .48);
-
   --serif: "aphrosine", script;
   --chinese-serif: "LXGW WenKai", "Songti SC", "Noto Serif SC", "SimSun", serif;
   --sans: "aphrosine", script;
@@ -35,16 +34,8 @@ body {
   margin: 0;
   color: var(--parchment);
   background:
-    radial-gradient(rgba(231, 213, 179, .055) .7px, transparent .9px),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, .018) 0,
-      rgba(255, 255, 255, .018) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    linear-gradient(125deg, #21140f, #34231a 48%, #251711);
-  background-size: 6px 6px, 100% 100%, 100% 100%;
+  linear-gradient(rgba(238, 229, 213, .22), rgba(238, 229, 213, .22)),
+  url("images/wedding-background.jpg?v=2") center center / cover no-repeat fixed #21140f;
   font-family: var(--font-pair);
   -webkit-font-smoothing: antialiased;
 }
@@ -120,9 +111,9 @@ main {
 
 .hero-photo-frame {
   position: relative;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid var(--antique-gold);
-  background: var(--leather);
+  background: var(--parchment-dark);
   box-shadow: 0 20px 50px rgba(0, 0, 0, .28);
 }
 
@@ -133,7 +124,6 @@ main {
   color: var(--antique-gold);
   font-size: 17px;
   line-height: 1;
-  content: "✧";
 }
 
 .hero-photo-frame::before {
@@ -157,20 +147,6 @@ main {
   background:
     radial-gradient(ellipse at 68% 46%, rgba(171, 157, 122, .24), transparent 42%),
     linear-gradient(120deg, #555344, #34332b 48%, #554b3b);
-}
-
-.hero-photo-placeholder::before {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(30, 21, 16, .78), rgba(30, 21, 16, .28) 57%, rgba(30, 21, 16, .06)),
-    repeating-linear-gradient(0deg, rgba(242, 229, 204, .035) 0 1px, transparent 1px 4px),
-    radial-gradient(rgba(242, 229, 204, .08) .6px, transparent .8px);
-  background-size: 100% 100%, 100% 100%, 5px 5px;
-  mix-blend-mode: multiply;
-  content: "";
 }
 
 .hero-photo-placeholder::after {
@@ -268,10 +244,9 @@ main {
   border-bottom: 1px solid var(--line);
   color: var(--parchment);
   background:
-    radial-gradient(rgba(235, 222, 193, .07) .7px, transparent .9px),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 5px),
     linear-gradient(135deg, var(--olive), var(--olive-dark));
-  background-size: 6px 6px, 100% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%;
   text-align: center;
 }
 
@@ -361,10 +336,9 @@ main {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(rgba(235, 222, 193, .075) .7px, transparent .9px),
     repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 4px),
     linear-gradient(135deg, #62634d, #4d513e 54%, #65624b);
-  background-size: 6px 6px, 100% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%;
 }
 
 .section-heading {
@@ -406,9 +380,8 @@ main {
   outline-offset: -7px;
   color: var(--parchment);
   background:
-    radial-gradient(rgba(240, 227, 199, .08) .7px, transparent .9px),
     linear-gradient(145deg, rgba(56, 42, 31, .46), rgba(45, 38, 29, .22));
-  background-size: 6px 6px, 100% 100%;
+  background-size: 100% 100%;
   cursor: pointer;
   transition: background-color .25s ease, border-color .25s ease;
 }
@@ -541,10 +514,8 @@ main {
   outline: 1px solid rgba(238, 229, 213, .5);
   outline-offset: -8px;
   color: var(--ink);
-  background:
-    radial-gradient(rgba(82, 62, 41, .09) .7px, transparent .9px),
-    var(--parchment);
-  background-size: 7px 7px, 100% 100%;
+  background: var(--parchment);
+  background-size: 100% 100%;
   box-shadow: 0 25px 90px rgba(0, 0, 0, .5);
   text-align: center;
 }
@@ -762,6 +733,7 @@ main {
     transition-duration: .01ms !important;
   }
 }
+
 .wordmark-name,
 .header-note,
 .eyebrow,
@@ -774,4 +746,26 @@ main {
 .back-to-top,
 .scroll-link {
   font-family: "beverly-drive-right", "LXGW WenKai", "Songti SC", serif;
+}
+
+.chapter-card,
+.chapter-card:hover,
+.chapter-card:focus,
+.chapter-card:visited {
+  text-decoration: none;
+}
+
+.chapters,
+.chapter-grid {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.chapters::before,
+.chapters::after,
+.chapter-grid::before,
+.chapter-grid::after {
+  content: none !important;
+  display: none !important;
 }
