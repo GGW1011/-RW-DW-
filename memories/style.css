@@ -1,12 +1,16 @@
+/* 褪色相纸色 + 柔和橄榄绿 */
 .rd-memory-page {
-  --rd-cream: #e8dfcc;
-  --rd-muted: #cfc5ae;
-  --rd-gold: #c2a778;
-  --rd-border: rgba(218, 199, 159, 0.4);
+  --rd-paper: #d9d1bd;
+  --rd-paper-light: #e8e0ce;
+  --rd-olive: #788064;
+  --rd-olive-dark: #555c48;
+  --rd-ink: #414237;
+  --rd-ink-soft: #686858;
+  --rd-line: rgba(83, 91, 70, .34);
 
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
-  color: var(--rd-cream);
+  color: var(--rd-ink);
   font-family: inherit;
 }
 
@@ -24,21 +28,22 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 1px solid var(--rd-border);
+  border-bottom: 1px solid var(--rd-line);
 }
 
 .rd-memory-back,
 .rd-memory-brand,
 .rd-memory-footer {
-  color: #d3c4a5;
-  font-size: 0.95rem;
+  color: var(--rd-olive-dark);
+  font-size: .95rem;
 }
 
 .rd-memory-panel {
   margin: 34px auto;
   padding: clamp(24px, 4vw, 48px);
-  background: rgba(75, 81, 61, 0.94);
-  border: 1px solid rgba(218, 199, 159, 0.5);
+  background: rgba(217, 209, 189, .96);
+  border: 1px solid rgba(83, 91, 70, .36);
+  box-shadow: 0 18px 55px rgba(42, 43, 34, .12);
 }
 
 .rd-memory-intro {
@@ -48,97 +53,166 @@
 
 .rd-memory-kicker,
 .rd-memory-date {
-  color: var(--rd-gold);
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
+  color: var(--rd-olive-dark);
+  letter-spacing: .1em;
+  font-size: .82rem;
 }
 
 .rd-memory-intro h1 {
   margin: 12px 0;
-  color: #eee6d6;
+  color: var(--rd-ink);
   font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .rd-memory-intro > p:last-child {
-  color: var(--rd-muted);
+  color: var(--rd-ink-soft);
   line-height: 1.8;
 }
 
-.rd-memory-list {
-  position: relative;
+/* 可点击的分类按钮 */
+.rd-memory-categories {
   display: grid;
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 34px;
+}
+
+.rd-memory-category {
+  min-height: 88px;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--rd-olive-dark);
+  background: rgba(232, 224, 206, .76);
+  border: 1px solid rgba(83, 91, 70, .36);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background .22s ease,
+    color .22s ease,
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.rd-memory-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(55, 59, 45, .12);
+}
+
+.rd-memory-category.is-active {
+  color: var(--rd-paper-light);
+  background: var(--rd-olive);
+  border-color: var(--rd-olive-dark);
+  box-shadow: inset 0 0 0 4px rgba(232, 224, 206, .16);
+}
+
+.rd-memory-category-title {
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.rd-memory-category-subtitle {
+  font-size: .68rem;
+  letter-spacing: .18em;
+  opacity: .78;
+}
+
+/* 桌面端三列照片墙 */
+.rd-memory-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+}
+
+/* 分类标题 */
+.rd-memory-list::before,
+#text-records::before {
+  grid-column: 1 / -1;
+  display: block;
+  margin: 0 0 2px;
+  padding: 0 0 14px;
+  color: var(--rd-olive-dark);
+  background: linear-gradient(
+    90deg,
+    var(--rd-olive),
+    rgba(120, 128, 100, .08)
+  ) left bottom / 100% 1px no-repeat;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: .08em;
 }
 
 .rd-memory-list::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 7px;
-  width: 1px;
-  background: var(--rd-border);
+  content: "图片回忆";
+}
+
+#text-records::before {
+  content: "文字记录";
 }
 
 .rd-memory-entry {
   position: relative;
-  padding-left: 32px;
+  min-width: 0;
+  padding: 14px;
+  background: rgba(232, 224, 206, .76);
+  border: 1px solid rgba(83, 91, 70, .3);
+  box-shadow: 0 8px 20px rgba(55, 59, 45, .1);
 }
 
 .rd-memory-entry::before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  left: 1px;
-  width: 13px;
-  height: 13px;
-  border: 1px solid var(--rd-gold);
-  border-radius: 50%;
-  background: #4b513d;
+  display: none;
 }
 
 .rd-memory-date {
-  margin: 0 0 9px;
+  margin: 0 0 11px;
+  line-height: 1.5;
 }
 
 .rd-memory-photo-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: stretch;
-  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .rd-memory-photo-frame {
   box-sizing: border-box;
-  width: fit-content;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
+  width: 100%;
+  height: 250px;
+  margin: 0;
   padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(232, 223, 204, 0.72);
-  background: rgba(38, 38, 31, 0.22);
+  border: 1px solid rgba(85, 92, 72, .4);
+  background: #c9c3ad;
 }
 
+/* 完整显示图片，不裁切 */
 .rd-memory-photo-frame img {
   display: block;
   width: auto !important;
   height: auto !important;
   max-width: 100%;
-  max-height: 210px;
+  max-height: 232px;
   aspect-ratio: auto !important;
   object-fit: contain !important;
 }
 
 .rd-memory-note {
-  padding: clamp(18px, 2vw, 26px);
-  border: 1px solid rgba(218, 199, 159, 0.32);
-  background: rgba(45, 43, 34, 0.2);
+  min-height: 126px;
+  padding: 12px 2px 2px;
+  border: 0;
+  border-top: 1px solid rgba(83, 91, 70, .25);
+  background: transparent;
 }
 
+/* 不显示笔记标签和额外标题 */
 .rd-memory-note-label,
 .rd-memory-note h2 {
   display: none;
@@ -146,48 +220,78 @@
 
 .rd-memory-note > p:last-child,
 .rd-memory-diary-space p {
-  margin-top: 0;
-  color: #d1c7b1;
-  font-size: 0.95rem;
+  margin: 0;
+  color: var(--rd-ink-soft);
+  font-size: .92rem;
   line-height: 1.75;
   white-space: pre-line;
+}
+
+#text-records {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+#text-records::before {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0 0 20px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .rd-memory-diary {
   min-height: 220px;
   padding: clamp(22px, 3vw, 36px);
-  border: 1px solid rgba(218, 199, 159, 0.4);
-  border-left: 3px solid #89604e;
-  background: rgba(232, 223, 204, 0.08);
+  color: var(--rd-ink);
+  background: rgba(232, 224, 206, .78);
+  border: 1px solid rgba(83, 91, 70, .32);
+  box-shadow: 0 8px 20px rgba(55, 59, 45, .08);
 }
 
 .rd-memory-diary h2 {
-  margin: 0 0 14px;
-  color: #eee6d6;
-  font-size: 1.4rem;
-  font-weight: 400;
+  display: none;
 }
 
 .rd-memory-diary .rd-memory-date {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .rd-memory-diary-space {
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .rd-memory-placeholder {
-  color: rgba(232, 223, 204, 0.58) !important;
-  font-size: 0.95rem;
+  color: rgba(65, 66, 55, .62) !important;
+  font-size: .95rem;
 }
 
 .rd-memory-footer {
   padding: 22px 0 34px;
-  border-top: 1px solid var(--rd-border);
+  border-top: 1px solid var(--rd-line);
   text-align: center;
 }
 
-@media (max-width: 720px) {
+[hidden] {
+  display: none !important;
+}
+
+/* 平板：两列 */
+@media (max-width: 900px) {
+  .rd-memory-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* 手机：一列 */
+@media (max-width: 600px) {
   .rd-memory-page {
     width: min(calc(100% - 28px), 600px);
   }
@@ -202,31 +306,143 @@
   }
 
   .rd-memory-intro {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
-  .rd-memory-photo-layout {
+  .rd-memory-categories {
+    gap: 9px;
+    margin-bottom: 26px;
+  }
+
+  .rd-memory-category {
+    min-height: 78px;
+    padding: 12px 8px;
+  }
+
+  .rd-memory-category-subtitle {
+    font-size: .58rem;
+    letter-spacing: .12em;
+  }
+
+  .rd-memory-list {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
 
   .rd-memory-photo-frame {
-    margin: 0 auto;
+    height: 270px;
   }
 
-  .rd-memory-entry {
-    padding-left: 25px;
+  .rd-memory-photo-frame img {
+    max-height: 252px;
   }
 }
-.rd-memory-photo-layout {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 18px;
+/* 回忆章节：橄榄绿相册底 + 褪色相纸卡片 */
+.rd-memory-page {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding-inline: max(18px, calc((100vw - 1320px) / 2));
+  color: #e8e0ce;
+  background-color: #747b61;
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(237, 226, 198, .09), transparent 34%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, .018) 0 1px,
+      transparent 1px 4px
+    );
 }
 
-.rd-memory-photo-frame img {
-  max-height: 260px;
+.rd-memory-header,
+.rd-memory-footer {
+  max-width: 1180px;
+  margin-inline: auto;
+  border-color: rgba(232, 224, 206, .38);
 }
 
-.rd-memory-list {
-  gap: 18px;
+.rd-memory-back,
+.rd-memory-brand,
+.rd-memory-footer {
+  color: #e8e0ce;
+}
+
+.rd-memory-panel {
+  max-width: 1180px;
+  margin: 34px auto;
+  padding: clamp(22px, 4vw, 48px) 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.rd-memory-kicker,
+.rd-memory-date {
+  color: #d8c69c;
+}
+
+.rd-memory-intro h1 {
+  color: #f0e8d6;
+}
+
+.rd-memory-intro > p:last-child {
+  color: rgba(240, 232, 214, .78);
+}
+
+.rd-memory-category {
+  color: #4f5642;
+  background: #ded5c0;
+  border-color: rgba(239, 230, 209, .68);
+}
+
+.rd-memory-category.is-active {
+  color: #f0e8d6;
+  background: #505a45;
+  border-color: #e0d1ad;
+}
+
+.rd-memory-list::before,
+#text-records::before {
+  color: #f0e8d6;
+  background: linear-gradient(
+    90deg,
+    #b29b68,
+    rgba(232, 224, 206, .12)
+  ) left bottom / 100% 1px no-repeat;
+}
+
+.rd-memory-entry {
+  background: #e3dac5;
+  border-color: rgba(69, 73, 54, .34);
+  box-shadow: 0 8px 22px rgba(43, 48, 36, .18);
+}
+
+.rd-memory-date {
+  color: #62694f;
+}
+
+.rd-memory-photo-frame {
+  background: #c9c1a9;
+  border-color: rgba(86, 91, 67, .48);
+}
+
+.rd-memory-note {
+  border-top-color: rgba(86, 91, 67, .28);
+}
+
+.rd-memory-note > p:last-child,
+.rd-memory-diary-space p {
+  color: #57584a;
+}
+
+.rd-memory-diary {
+  background: #e3dac5;
+  border-color: rgba(69, 73, 54, .34);
+}
+
+@media (max-width: 600px) {
+  .rd-memory-panel {
+    padding-block: 24px;
+  }
 }

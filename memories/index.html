@@ -23,165 +23,662 @@
         <p>我们的日常/一些值得记录的小事</p>
       </section>
 
-      <section class="rd-memory-list" aria-label="回忆记录">
+      <nav class="rd-memory-categories" aria-label="回忆分类" role="tablist">
+        <button class="rd-memory-category is-active" type="button" role="tab"
+          aria-selected="true" aria-controls="photo-memories" data-memory-tab="photos">
+          <span class="rd-memory-category-title">图片回忆</span>
+          <span class="rd-memory-category-subtitle">PHOTO MEMORIES</span>
+        </button>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 01</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/01.jpg" alt="Dean喝醉后拿着枪玩">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>勉强留下的照片</h2>
-        <p>这个人喝醉了，拿着枪到处玩……我和小米两个人都拦不住。但是这张照片很萌，勉强留下吧。</p>
-      </div>
-    </div>
-  </article>
+        <button class="rd-memory-category" type="button" role="tab"
+          aria-selected="false" aria-controls="text-records" data-memory-tab="journal">
+          <span class="rd-memory-category-title">文字记录</span>
+          <span class="rd-memory-category-subtitle">WRITTEN NOTES</span>
+        </button>
+      </nav>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 02</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/02.jpg" alt="Dean在机场等飞机">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>候机时间</h2>
-        <p>这是我们一起去上海的时候，他在等飞机，装模作样地在看书。但是冷脸萌。</p>
-      </div>
-    </div>
-  </article>
+      <section class="rd-memory-list" id="photo-memories" role="tabpanel" aria-label="图片回忆">
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 03</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/03.jpg" alt="Dean在等着洗车">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>洗车前</h2>
-        <p>这张是在等着洗车。前两天开进泥地了，宝宝变得特别脏。</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 01</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/01.jpg" alt="Dean喝醉后拿着枪玩">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>勉强留下的照片</h2>
+              <p>这个人喝醉了，拿着枪到处玩……我和小米两个人都拦不住。但是这张照片很萌，勉强留下吧。</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 04</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/04.jpg" alt="Dean手上沾满机油">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>机油和干净的手</h2>
-        <p>这是他又在修车，手上全是机油。我叫他把手拿出来，我俩对比一下：我的干干净净，他的手要脏死了！</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 02</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/02.jpg" alt="Dean在机场等飞机">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>候机时间</h2>
+              <p>这是我们一起去上海的时候，他在等飞机，装模作样地在看书。但是冷脸萌。</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 05 · SALT LAKE CITY</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/05.jpg" alt="Dean和两只法斗">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>Bucky 和 Becky</h2>
-        <p>这是几年前的照片了。我们在盐湖城办案子，应该是9月20号。某人一直说不喜欢狗，但是有小狗蹭上来，还是忍不住贴贴。Motel门口遇到的两只法斗，一只叫Bucky，一只叫Becky，太可爱了。“I've always liked dogs. I just don't want to own one because they're too much work.”</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 03</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/03.jpg" alt="Dean在等着洗车">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>洗车前</h2>
+              <p>这张是在等着洗车。前两天开进泥地了，宝宝变得特别脏。</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 06 · AROUND 2013</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/06.jpg" alt="大家聚在一起聊天">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>Guilty is charged</h2>
-        <p>这是13年左右，我忘了我们在做什么了。大家聚在一起聊天，突然聊到什么事，好像是Charlie说的，老丁就在那说：“Guilty is charged.” Sam怎么一脸绝望？但是这张又萌又帅啊。</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 04</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/04.jpg" alt="Dean手上沾满机油">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>机油和干净的手</h2>
+              <p>这是他又在修车，手上全是机油。我叫他把手拿出来，我俩对比一下：我的干干净净，他的手要脏死了！</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 07 · SEPTEMBER 9</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/07.jpg" alt="Dean穿着我给他买的夹克">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>情侣夹克</h2>
-        <p>9月9号的时候我给他买了件夹克，认真的说，完全是为他量身定做的！Anyway，自从那之后他就经常穿这个出门。没过多久，我终于在Zara买了件合适的皮衣，我们俩一起穿情侣装出去，给他乐坏了……</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 05 · SALT LAKE CITY</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/05.jpg" alt="Dean和两只法斗">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>Bucky 和 Becky</h2>
+              <p>这是几年前的照片了。我们在盐湖城办案子，应该是9月20号。某人一直说不喜欢狗，但是有小狗蹭上来，还是忍不住贴贴。Motel门口遇到的两只法斗，一只叫Bucky，一只叫Becky，太可爱了。“I've always liked dogs. I just don't want to own one because they're too much work.”</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 08 · 2007</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/08.jpg" alt="Sammy和Bobby商量对策">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>镇子上的狐妖</h2>
-        <p>这张是我拍的！2007年的时候，镇子上有狐妖，Sammy和Bobby正在商量对策。</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 06 · AROUND 2013</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/06.jpg" alt="大家聚在一起聊天">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>Guilty is charged</h2>
+              <p>这是13年左右，我忘了我们在做什么了。大家聚在一起聊天，突然聊到什么事，好像是Charlie说的，老丁就在那说：“Guilty is charged.” Sam怎么一脸绝望？但是这张又萌又帅啊。</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 09</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/09.jpg" alt="Dean受伤了">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>又受伤了</h2>
-        <p>某人又受伤了……被我念叨还不乐意，也不看看自己伤得多重，我真服了。</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 07 · SEPTEMBER 9</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/07.jpg" alt="Dean穿着我给他买的夹克">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>情侣夹克</h2>
+              <p>9月9号的时候我给他买了件夹克，认真的说，完全是为他量身定做的！Anyway，自从那之后他就经常穿这个出门。没过多久，我终于在Zara买了件合适的皮衣，我们俩一起穿情侣装出去，给他乐坏了……</p>
+            </div>
+          </div>
+        </article>
 
-  <article class="rd-memory-entry">
-    <p class="rd-memory-date">MEMORY 10 · Kansas</p>
-    <div class="rd-memory-photo-layout">
-      <figure class="rd-memory-photo-frame">
-        <img src="../assets/images/memories/10.jpg" alt="大家一起过boys night">
-      </figure>
-      <div class="rd-memory-note">
-        <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
-        <h2>你们的 boys night</h2>
-        <p>当时我回旧金山了，我爸和我哥来串门。他们又在那里享受boys night……留我一个人在旧金山苦苦挣扎。你们偷偷玩就算了！这几个人还专门给我拍照！太过分了！！！！！！</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 08 · 2007</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/08.jpg" alt="Sammy和Bobby商量对策">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>镇子上的狐妖</h2>
+              <p>这张是我拍的！2007年的时候，镇子上有狐妖，Sammy和Bobby正在商量对策。</p>
+            </div>
+          </div>
+        </article>
 
-  <!-- 纯文字日记的位置，之后把提示文字替换成你的日记 -->
-  <article class="rd-memory-entry">
-    <div class="rd-memory-diary">
-      <p class="rd-memory-date">DIARY · 填写日期</p>
-      <h2>纯文字日记</h2>
-      <div class="rd-memory-diary-space">
-        <p class="rd-memory-placeholder">这块留给不需要配图的日记。准备好后，把这段提示文字替换成正文。</p>
-      </div>
-    </div>
-  </article>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 09</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/09.jpg" alt="Dean受伤了">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>又受伤了</h2>
+              <p>某人又受伤了……被我念叨还不乐意，也不看看自己伤得多重，我真服了。</p>
+            </div>
+          </div>
+        </article>
 
-  </section>
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 10 · Kansas</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/10.jpg" alt="大家一起过boys night">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <h2>你们的 boys night</h2>
+              <p>当时我回旧金山了，我爸和我哥来串门。他们又在那里享受boys night……留我一个人在旧金山苦苦挣扎。你们偷偷玩就算了！这几个人还专门给我拍照！太过分了！！！！！！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 11</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/11.jpg" alt="他离开前留下的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是在某人走之前留下的，那时候临近他45岁生日，他还以为我只是舍不得他……他到现在都不知道这是什么意思。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 12</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/12.jpg" alt="大家视频通话时的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是我去阿拉巴马州办事，当时恶魔附身的情况有点严重，我就亲自去解决了。这两个人留守堪萨斯跟我打视频，本来还挺开心的，他俩还有我哥三人在那打打闹闹、互相拌嘴，后面我嫌吵就 mute 掉了。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 13 · 2015</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/13.jpg" alt="Sam和Bobby">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是15年的时候拍的，Bobby，我想你了……给Sam拍的，眼里有光哈哈哈哈哈</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 14 · 2006</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/14.jpg" alt="两个人查案时又吵起来了">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是2006年的时候，本来大家查案查得好好的，两个人又开始吵架动手，被我逮个正着……这俩人不闹能死，，，</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 15 · 2015</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/15.jpg" alt="大家一起去镇上的餐厅吃饭">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是我拍的！这还是15年的时候，快到感恩节了，就想着大家一起吃顿好的，就叫了辆车去镇上的餐厅，大家一起吃饭。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 16 · 2016</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/16.jpg" alt="我和Dean在车上">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是16年的时候我俩在车上吵架了，也没什么特别的原因，就是又在翻旧账，反正就那些事。然后他说要下车冷静一下，我也要在车里待会。后面冷静了一会儿之后，就回车上了，道歉了就没事了。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 17</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/17.jpg" alt="Sam和Dean走路回Bobby家">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是宝宝当时在保修，两个人只能走路回Bobby家，阳光正好！特别萌的两个人，“My Car！！！ My Baby”，没办法，车一直在开，一直在坏……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 18</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/18.jpg" alt="被抓后还在笑的Dean">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>整个人被抓了还在萌萌地笑，你就庆幸我找关系给你搞出来了吧！！！！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 19 · 2020</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/19.jpg" alt="两个人在Motel看到警车后看向我">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是2020年，两个人被警察调查了。这俩人在 motel 看到警车的那一瞬间立马同时转头看我，指望我去给那些警察和消防员施点小法术把这事糊弄过去。“Why not？”你俩也太理所应当了吧。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 20</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/20.jpg" alt="我和Dean在动物收容所遇到德牧">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>我当时说想养宠物，我们就去 animal shelter 看看有没有合适的宠物。看到这个德牧，我俩都很喜欢。我跟他说：“你俩长得真像。”我就让他俩合了个影，是不是挺像的！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 21</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/21.jpg" alt="大家下车陪Crowley玩">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>左边这是我们一次在回地堡的路上，Crowley一直吵着要have fun，没办法，我们几个下车找了个地方陪他玩。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 22</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/22.jpg" alt="Dean穿着外裤上床">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这真的是我最喜欢的照片之一了。我们当时在波特兰旅游，我又在批评他穿外裤上床，他老觉得无所谓，我就给他拍下来了！再有下次！！！他就自己给我滚去洗床单被罩去。我是那种又懒又洁癖的人，他是那种我督促他干、他可以干，但他绝对不会主动干的人，所以也算是一种互补（）。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 23 · 2023</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/23.jpg" alt="大家一起出去吃饭">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这就是前两年拍的23年，当时老爸来找我们，也是难得见一面，就一起出去吃的饭，叫了个七座一起去吃了顿好的。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 24</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/24.jpg" alt="Dean和Sam又在吵架">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>两个人又在吵架ing……早期我完全带小孩来的，“Well, that's what he gets for driving Baby without my permission.”“幼稚！”</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 25 · 2018</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/25.jpg" alt="Gabriel和Adam来找大家玩">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是18年的时候了，明显大家年纪上来了，Gabriel和Adam来找我们玩，难得来一趟就给拍了张照片，我好想你们吧！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 26</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/26.jpg" alt="Dean躺在沙发上偷懒">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>他有的时候老在沙发上瘫着，我叫他收拾家，他也不理我，于是我叫我哥把他偷懒的证据拍下来！懒蛋……虽然我也没好到哪去。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 27</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/27.jpg" alt="丁老师一脸懵的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是我在家一直研究偷拍的产物，于是诞生了这张丁老师非常懵逼的小照片，非常萌，非常像小黄人。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 28</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/28.jpg" alt="Dean穿着睡裤和Sam吵架">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这也是三年前的照片了，当时我在和朋友录地堡room tour，两个人又在那里吵架，我就给录下来了。但是丁老师穿着这个小睡裤莫名喜感啊，很萌很萌啊。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 29</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/29.jpg" alt="Dean和哥哥聊天">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是我俩在结婚很多年后，他和我哥聊起来当时我俩恋爱时发生的事。虽然说他们看着很开心，其实我哥当时刚知道的时候可生气了……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 30</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/30.jpg" alt="大家一起去打保龄球">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这就是前两天拍的哈哈哈，我拉他去打保龄球，我之前都没打过，他也很少打保龄球，我俩完全都是新手，一点都不会。我哥也就在边上看着，Sam是真会打，他说他大学的时候跟朋友出去玩的时候打过几次，真挺厉害的。打到后面就变成了Sam和Dean单方面对决，我和Cas在后面面无表情地加油助威。保龄球室真的累，非常考验手臂发力，打一会儿就手臂酸痛。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 31</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/31.jpg" alt="Sammy在斯坦福上学时参加寝室派对">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>Awww，这是Sammy还在斯坦福上学的时候，那个时候的小米也太萌了吧……竟然还搞寝室party。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 32</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/32.jpg" alt="我们庆祝五周年">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>记录一下我俩的五周年，转眼都过去一个月了！好快，五周年本来想搞得正式一点，结果娃丢了……坏！所有顺其自然地就搞得日常一点了，平平淡淡才是真！那天去朝阳公园突发奇想想去喝酒，新的娃也到了，于是非常幸福地在减脂期品鉴了自己一直想喝的精酿，非常好喝！！！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 33 · 2013</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/33.jpg" alt="Dean累得靠在桌上睡着了">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是13年的时候，当时确实压力特别大，事特别多，不只是我俩，大家都很心累。那天我们找了个地方吃饭，他累得直接靠在桌上睡着了。哎，幸好那些日子都过去了。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 34</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/34.jpg" alt="我们在家装修期间拍的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是我俩在家装修期间拍的照。我俩的家除了房子不是我们建的之外，都是我们俩一起做的：一起做家具、一起刷漆、一起买家具。搞完这些真的很有成就感！住在自己装修的小家里好幸福吧。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 35</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/35.jpg" alt="我们在家门口扫落叶后拍的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是昨天拍的哈哈哈哈，把家门口的落叶扫到边上的草坪被谴责了。我们没有乱扔！我们也没有dumping，我们是sweeping……于是这俩人拉着我给他们拍照挑衅，开始报复……这俩人的报复就是在No dumping区扔落叶。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 36</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/36.jpg" alt="Dean听见我叫他后转过头">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是聚会的时候我玩得正起劲，我和Charlie打赌，我突然叫丁温彻一声他会不会理我，然后就收获了一只宛若土拨鼠的丁温彻。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 37</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/37.jpg" alt="两个人穿着印有彼此脸的同款卫衣">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这俩人搞了印着他俩脸的同款卫衣，就这么炫，就这么玩，gay！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 38</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/38.jpg" alt="我和Dean的情侣海娜">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张照片要搭配我的海娜看。我给胳膊上弄了个我俩的情侣海娜，然后他也想要，但是海娜膏没了，我就跟他说我亲你胳膊几下取而代之。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 39</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/39.jpg" alt="我们一起锻炼时拍的照片">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>我严肃批评某些人！！！说好要一起锻炼，但他实在吃了太多垃圾食品，并且熬夜看剧还喝酒。自从我们“退休”了，“Don’t use the words ‘Retired.’”为啥？“Sounds like we are old.”你知道我们已经老了对吧……虽然我还没有，但是你老了，嘿嘿。Anyway，他的体力真的不如从前……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 40 · 2005</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/40.jpg" alt="Sam和Dean在树林里猎杀温迪戈">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是2005年的时候他们在林子里面Hunt Wendigo，是真的帅啊……这俩小宝年轻的时候真的帅。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 41</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/41.jpg" alt="我装丧尸吓Dean">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是我俩喝大了在城里到处乱逛，找了个便利店边喝边发疯。我喝大了，突然装作丧尸感染，吓他一跳。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 42 · 2006 · Ohio</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/42.jpg" alt="Dean和Sam在motel里吵架">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张是06年的时候，在Ohio的某个motel，他俩又在吵架。我站在窗外偷偷拍了一张，没想到他俩都发现了……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 43 · 2021</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/43.jpg" alt="大家一起出去聚餐的合影">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这是21年的时候大家一起出去聚餐。那天我实在不舒服，我哥就先送我回家了。到家之后他们就给我发了这张合影，我好想你们吧！</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 44</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/44.jpg" alt="Dean和Sam的boys night">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这张依旧是boys night。我当时去加州处理天堂的案子，正好家里没事，他俩就又搞了个boys night，给我报备两个人在家安心喝酒看电视。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 45</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/45.jpg" alt="Dean穿着鞋和外衣外裤躺在床上">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>又他妈穿鞋上床！又他妈穿外衣外裤上床，我真要气死了，也就幸好这是motel吧，在家里他要敢这么干我真的会发火的……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 46</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/46.jpg" alt="Dean和Sam背着我出去喝酒">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>这俩死人……背着我出来喝酒，两个人还趁着我加班发照片勾引我，我真受不了了……我要喝酒……</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rd-memory-entry">
+          <p class="rd-memory-date">MEMORY 47 · 2009</p>
+          <div class="rd-memory-photo-layout">
+            <figure class="rd-memory-photo-frame">
+              <img src="../assets/images/memories/47.jpg" alt="Sam和Dean在挖坟">
+            </figure>
+            <div class="rd-memory-note">
+              <p class="rd-memory-note-label">A NOTE BESIDE THE PHOTO</p>
+              <p>09年的时候又是难得的两个人没有吵架的时候，原来在挖别人的坟吗……Anyway，真的希望这两个幼稚鬼不要再吵架了。</p>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- 纯文字日记的位置，之后把提示文字替换成你的日记 -->
+      <article class="rd-memory-entry" id="text-records" role="tabpanel" aria-label="文字记录">
+        <div class="rd-memory-diary">
+          <p class="rd-memory-date">DIARY · 填写日期</p>
+          <h2>纯文字日记</h2>
+          <div class="rd-memory-diary-space">
+            <p class="rd-memory-placeholder">这块留给不需要配图的日记。准备好后，把这段提示文字替换成正文。</p>
+          </div>
+        </div>
+      </article>
     </main>
 
     <footer class="rd-memory-footer">
       <a href="../index.html">RETURN HOME</a>
     </footer>
   </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

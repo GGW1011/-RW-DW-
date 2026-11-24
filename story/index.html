@@ -6,259 +6,10 @@
   <title>我们的故事 | Sherry &amp; Dean</title>
 
   <link rel="stylesheet" href="../assets/style.css">
-
-  <style>
-    body {
-      margin: 0;
-      color: var(--parchment, #eee6d7);
-      font-family: var(--font-pair, "Beverly Drive Right", serif);
-    }
-
-    .rd-story-header,
-    .rd-story-footer {
-      width: min(1220px, calc(100% - 48px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .rd-story-header {
-      min-height: 82px;
-      border-bottom: 1px solid var(--line, rgba(194, 168, 122, 0.48));
-    }
-
-    .rd-story-header a,
-    .rd-story-footer a {
-      color: var(--muted-cream, #c8bca6);
-      text-decoration: none;
-    }
-
-    .rd-story-wordmark {
-      color: var(--muted-cream, #c8bca6);
-    }
-
-    .rd-story-shell {
-      width: min(960px, calc(100% - 32px));
-      margin: 54px auto 72px;
-      padding: clamp(28px, 6vw, 68px);
-      box-sizing: border-box;
-      color: var(--parchment, #eee6d7);
-      background: rgba(75, 78, 60, 0.95);
-      border: 1px solid var(--line, rgba(194, 168, 122, 0.48));
-    }
-
-    .rd-story-intro {
-      margin-bottom: 48px;
-      text-align: center;
-    }
-
-    .rd-story-eyebrow {
-      margin: 0 0 12px;
-      color: var(--antique-gold, #b9a06a);
-      letter-spacing: 0.08em;
-    }
-
-    .rd-story-intro h1 {
-      margin: 0 0 14px;
-      color: var(--parchment, #eee6d7);
-      font-size: clamp(38px, 6vw, 64px);
-      font-weight: normal;
-    }
-
-    .rd-story-lead {
-      margin: 0;
-      color: var(--muted-cream, #c8bca6);
-    }
-
-    .rd-story-timeline {
-      position: relative;
-      display: grid !important;
-      grid-template-columns: minmax(0, 1fr) !important;
-      grid-auto-flow: row !important;
-      gap: 16px;
-      width: 100%;
-      max-width: 760px;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
-    .rd-story-season {
-      margin: 36px 0 8px 48px;
-      color: var(--antique-gold, #b9a06a);
-      font-size: 1rem;
-      font-weight: normal;
-      letter-spacing: 0.08em;
-    }
-
-    .rd-story-season:first-child {
-      margin-top: 0;
-    }
-
-    .rd-story-event {
-      position: relative;
-      display: block !important;
-      width: auto;
-      min-width: 0;
-      margin: 0 0 0 48px;
-      border: 1px solid var(--line, rgba(194, 168, 122, 0.48));
-      background: rgba(48, 36, 28, 0.38);
-      box-sizing: border-box;
-    }
-
-    .rd-story-event::before {
-      position: absolute;
-      top: 24px;
-      left: -41px;
-      width: 12px;
-      height: 12px;
-      border: 1px solid var(--muted-cream, #c8bca6);
-      border-radius: 50%;
-      background: #555844;
-      content: "";
-    }
-
-    .rd-story-timeline::before {
-      position: absolute;
-      top: 10px;
-      bottom: 10px;
-      left: 13px;
-      width: 1px;
-      background: var(--line, rgba(194, 168, 122, 0.48));
-      content: "";
-    }
-
-    .rd-story-event summary {
-      display: grid !important;
-      grid-template-columns: 140px minmax(0, 1fr) 100px;
-      align-items: center;
-      gap: 16px;
-      width: 100%;
-      min-width: 0;
-      padding: 18px 22px;
-      box-sizing: border-box;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .rd-story-event summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .rd-story-date {
-      color: var(--antique-gold, #b9a06a);
-      font-style: italic;
-    }
-
-    .rd-story-title {
-      min-width: 0;
-      color: var(--parchment, #eee6d7);
-      font-size: 1.1rem;
-      overflow-wrap: anywhere;
-    }
-
-    .rd-story-prompt {
-      color: var(--muted-cream, #c8bca6);
-      font-size: 0.82rem;
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .rd-story-event[open] summary {
-      border-bottom: 1px solid var(--line, rgba(194, 168, 122, 0.48));
-    }
-
-    .rd-story-copy {
-      padding: 8px 22px 20px;
-      color: var(--muted-cream, #c8bca6);
-      line-height: 1.9;
-      overflow-wrap: anywhere;
-    }
-
-    .rd-story-copy p {
-      margin: 10px 0;
-    }
-
-    .rd-story-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .rd-story-speaker {
-      color: var(--parchment, #eee6d7);
-    }
-
-    .rd-story-unfinished {
-      color: var(--antique-gold, #b9a06a);
-      font-style: italic;
-    }
-
-    .rd-story-scene {
-      margin: 24px 0 8px;
-      color: var(--antique-gold, #b9a06a);
-      font-size: 1rem;
-      font-weight: normal;
-    }
-
-    .rd-story-footer {
-      justify-content: center;
-      min-height: 64px;
-      border-top: 1px solid var(--line, rgba(194, 168, 122, 0.48));
-    }
-
-    @media (max-width: 600px) {
-      .rd-story-header,
-      .rd-story-footer {
-        width: calc(100% - 32px);
-      }
-
-      .rd-story-shell {
-        width: calc(100% - 20px);
-        padding: 30px 16px;
-      }
-
-      .rd-story-season,
-      .rd-story-event {
-        margin-left: 36px;
-      }
-
-      .rd-story-event::before {
-        left: -30px;
-      }
-
-      .rd-story-timeline::before {
-        left: 9px;
-      }
-
-      .rd-story-event summary {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 6px 12px;
-        padding: 16px;
-      }
-
-      .rd-story-date {
-        grid-column: 1;
-        grid-row: 1;
-      }
-
-      .rd-story-title {
-        grid-column: 1;
-        grid-row: 2;
-      }
-
-      .rd-story-prompt {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-      }
-
-      .rd-story-copy {
-        padding: 8px 16px 18px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/story.css">
 </head>
 
 <body>
-
   <header class="rd-story-header">
     <a href="../index.html">← 回到首页</a>
     <span class="rd-story-wordmark">Sherry &amp; Dean</span>
@@ -268,11 +19,21 @@
     <section class="rd-story-intro">
       <p class="rd-story-eyebrow">OUR STORY LINE</p>
       <h1>我们的故事</h1>
+
+      <div class="rd-story-summary">
+        <p>Sariel是与Castiel一同诞生的Seraphim，后来与人类女孩Sherry融合，拥有了天使的漫长记忆与人类的情感。她最初因天堂的任务与Dean Winchester相识，在一次次共同对抗天使、恶魔与末日危机的过程中，两人逐渐建立起信任。</p>
+
+        <p>第五季，Dean被Zachariah送往2014年的平行未来，意外发现未来的自己竟然与Sariel结了婚。回到现实后，他将这件事告诉了她，也让两人开始不自觉地重新审视彼此。Dean一度分不清自己究竟是因为提前知道了未来才开始关注她，还是早已在不知不觉中爱上了她；Sariel同样困惑，却也逐渐意识到自己的感情。尽管那个末日未来最终被改变，两人还是在相处中真正爱上了彼此，后来正式交往，并在一次拉斯维加斯之旅中双双醉到断片，第二天醒来才发现已经结婚。</p>
+
+        <p>此后，他们一起经历了无数次猎魔、争吵、离别与重逢。Sariel在Raphael死后继承了他的大天使Grace，逐渐成长为拥有强大力量的继任者，却始终保留着自己的意志与身份。她与Dean的爱情并非毫无矛盾：一个近乎永生，一个注定衰老死亡，但他们仍然选择共同生活。</p>
+
+        <p>最终，在Dean走完属于人类的一生后，Sariel与Castiel、Jack共同建立了新的天堂。待一切尘埃落定，她选择重新回到故事的起点，再一次与Dean相遇，重新经历他们的故事。即使每一次轮回都意味着重新面对失去，她依然愿意一次又一次地爱上他。那个2014年的未来从来没有决定他们的命运，它只是提前剧透了一个他们最终会亲自作出的选择。</p>
+      </div>
+
       <p class="rd-story-lead">以下皆为我在剧集中出现片段并非完整故事</p>
     </section>
 
     <section class="rd-story-timeline" aria-label="Sherry 与 Dean 的故事时间线">
-
       <h2 class="rd-story-season">SEASON FOUR · 2008—2009</h2>
 
       <details class="rd-story-event">
@@ -563,13 +324,11 @@
           <p><strong class="rd-story-speaker">Sariel：</strong>“Okay, that’s enough.” Sariel 终于受不了了。</p>
         </div>
       </details>
-
     </section>
   </main>
 
   <footer class="rd-story-footer">
     <a href="../index.html">RETURN HOME</a>
   </footer>
-
 </body>
 </html>

@@ -3,122 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sherry &amp; Dean</title>
-  <meta
-    name="description"
-    content="Sherry and Dean's little corner of the internet."
-  >
+  <meta name="theme-color" content="#f2eee3">
+  <meta name="description" content="Sherry & Dean 的小小世界：故事、回忆、旅行，以及一起生活的日子。">
+  <title>Sherry &amp; Dean — Our Little World</title>
 
   <link rel="stylesheet" href="https://use.typekit.net/mpq4daa.css">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/script.js" defer></script>
 </head>
 
-<body>
+<body id="top">
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="回到首页">
-      <span class="wordmark-name">Sherry &amp; Dean</span>
+    <a class="wordmark" href="#top" aria-label="Sherry and Dean 首页">
+      Sherry <span>&amp;</span> Dean
     </a>
-
-    <p class="header-note">A little archive of us</p>
+    <p class="header-note">A LITTLE ARCHIVE OF US</p>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-photo-frame">
-        <div class="hero-photo-placeholder">
-          <img
-            class="hero-photo"
-            src="assets/images/wedding-photo.jpg"
-            alt="我们的结婚照"
-          >
+      <div class="hero-image-wrap">
+        <img
+          class="hero-image"
+          src="assets/images/wedding-photo.PNG"
+          alt="Sherry 和 Dean 的婚礼照片"
+        >
+        <div class="hero-image-shade" aria-hidden="true"></div>
+
+        <div class="hero-title-lockup">
+          <h1 id="hero-title">Sherry <span>&amp;</span> Dean</h1>
+          <p class="hero-caption">我们的六年</p>
         </div>
-      </div>
 
-      <div class="hero-caption">
-        <p class="eyebrow">OUR LITTLE WORLD <span>✧</span> EST. FOREVER</p>
-        <h1 id="hero-title">我们的六年</h1>
-        <p class="hero-subtitle">我们将在这里记录属于我们的故事。</p>
+        <a class="hero-scroll" href="#welcome" aria-label="向下浏览">↓</a>
       </div>
-
-      <a class="scroll-link" href="#chapters">
-        <span>SCROLL TO EXPLORE</span>
-        <span class="scroll-arrow" aria-hidden="true">↓</span>
-      </a>
     </section>
 
-    <div class="ornament-divider" aria-hidden="true">✧</div>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#welcome">首页</a>
+      <a href="story/index.html">我们的故事</a>
+      <a href="memories/index.html">回忆</a>
+      <a href="#chapters">章节目录</a>
+      <a href="#chapters" data-open-chapter="ask">提问箱</a>
+    </nav>
+
+    <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">OUR LITTLE WORLD <span>✦</span> EST. FOREVER</p>
+      <h2 id="welcome-title">我们的六年</h2>
+      <p class="welcome-copy">一些故事，一些回忆，还有我们一起走过的地方。</p>
+    </section>
 
     <section class="chapters" id="chapters" aria-labelledby="chapters-title">
-  <div class="section-heading">
-    <p class="eyebrow">THE STORY SO FAR</p>
-    <h2 id="chapters-title">这些组成了我们</h2>
-    <p>在这里走进属于我们的四个小章节。</p>
-  </div>
+      <div class="chapters-intro">
+        <p class="eyebrow">THE STORY SO FAR</p>
+        <h2 id="chapters-title">这些组成了我们</h2>
+      </div>
 
-  <nav class="chapter-grid" aria-label="网站章节">
-    <a class="chapter-card" href="story/index.html">
-      <span class="chapter-number">01</span>
-      <span class="chapter-title">我们的故事</span>
-      <span class="chapter-subtitle">OUR STORY</span>
-      <span class="chapter-open">OPEN CHAPTER</span>
-    </a>
+      <nav class="chapter-grid" aria-label="网站章节">
+        <a class="chapter-card" data-tone="story" href="story/index.html">
+          <span class="chapter-number">01</span>
+          <span class="chapter-title">我们的故事</span>
+          <span class="chapter-subtitle">OUR STORY</span>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
 
-    <a class="chapter-card" href="memories/index.html">
-      <span class="chapter-number">02</span>
-      <span class="chapter-title">回忆</span>
-      <span class="chapter-subtitle">MEMORIES</span>
-      <span class="chapter-open">OPEN CHAPTER</span>
-    </a>
+        <a class="chapter-card" data-tone="memories" href="memories/index.html">
+          <span class="chapter-number">02</span>
+          <span class="chapter-title">回忆</span>
+          <span class="chapter-subtitle">MEMORIES</span>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
 
-    <button
-      class="chapter-card"
-      type="button"
-      data-chapter="wedding"
-      aria-haspopup="dialog"
-      aria-controls="chapter-dialog"
-    >
-      <span class="chapter-number">03</span>
-      <span class="chapter-title">婚礼</span>
-      <span class="chapter-subtitle">THE WEDDING</span>
-      <span class="chapter-open">OPEN CHAPTER</span>
-    </button>
+        <a class="chapter-card" data-tone="wedding" href="wedding/index.html">
+        <span class="chapter-number">03</span>
+        <span class="chapter-title">婚礼</span>
+        <span class="chapter-subtitle">THE WEDDING</span>
+        <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </a>
 
-    <button
-      class="chapter-card"
-      type="button"
-      data-chapter="home"
-      aria-haspopup="dialog"
-      aria-controls="chapter-dialog"
-    >
-      <span class="chapter-number">04</span>
-      <span class="chapter-title">家和家人</span>
-      <span class="chapter-subtitle">HOME &amp; FAMILY</span>
-      <span class="chapter-open">OPEN CHAPTER</span>
-    </button>
-    </nav>
+        <button
+          class="chapter-card"
+          data-tone="home"
+          type="button"
+          data-chapter="home"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">04</span>
+          <span class="chapter-title">家和家人</span>
+          <span class="chapter-subtitle">HOME &amp; FAMILY</span>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+          class="chapter-card"
+          data-tone="travel"
+          type="button"
+          data-chapter="travel"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">05</span>
+          <span class="chapter-title">一起旅行</span>
+          <span class="chapter-subtitle">OUR TRAVELS</span>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+          class="chapter-card"
+          data-tone="ask"
+          type="button"
+          data-chapter="ask"
+          aria-haspopup="dialog"
+          aria-controls="chapter-dialog"
+        >
+          <span class="chapter-number">06</span>
+          <span class="chapter-title">提问箱</span>
+          <span class="chapter-subtitle">ASK US</span>
+          <span class="chapter-arrow" aria-hidden="true">↗</span>
+        </button>
+      </nav>
     </section>
-
-    <dialog
-      class="chapter-dialog"
-      id="chapter-dialog"
-      aria-labelledby="dialog-title"
-    >
-      <button class="dialog-close" type="button" aria-label="关闭">×</button>
-
-      <p class="eyebrow">A LITTLE CHAPTER</p>
-      
-      <h2 id="dialog-title"></h2>
-      <p class="dialog-copy" id="dialog-copy"></p>
-
-      <button class="dialog-return" type="button">回到章节目录</button>
-    </dialog>
   </main>
 
+  <dialog class="chapter-dialog" id="chapter-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="关闭窗口">×</button>
+    <p class="eyebrow">A LITTLE CHAPTER</p>
+    <h2 id="dialog-title"></h2>
+    <p class="dialog-copy" id="dialog-copy"></p>
+    <div class="dialog-content" id="dialog-content"></div>
+    <button class="dialog-return" type="button">回到章节目录</button>
+  </dialog>
+
   <footer class="site-footer">
-    <div class="footer-rule" aria-hidden="true">✧</div>
-    <p class="footer-monogram">Sherry <span>&amp;</span> Dean</p>
+    <a class="footer-wordmark" href="#top">Sherry <span>&amp;</span> Dean</a>
     <p>MADE WITH LOVE, FOR SHERRY &amp; DEAN</p>
     <a class="back-to-top" href="#top">BACK TO TOP ↑</a>
   </footer>
