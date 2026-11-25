@@ -1,167 +1,409 @@
-.story-header,
-.story-footer {
+/* Story chapter: light parchment with brown details */
+:root {
+  --story-paper: #eee9dc;
+  --story-paper-light: #f2eee3;
+  --story-ink: #34352d;
+  --story-ink-soft: #666257;
+  --story-olive: #777b67;
+  --story-olive-deep: #555a49;
+  --story-brass: #a39165;
+  --story-brass-light: rgba(163, 145, 101, .34);
+  --story-brown: #80644a;
+}
+
+body {
+  color: var(--story-ink);
+  background-color: var(--story-paper);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, .38), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(60, 57, 46, .025) 0 1px, transparent 1px 5px);
+  font-family: var(--chinese-serif, "LXGW WenKai", "Songti SC", serif);
+}
+
+.rd-story-header,
+.rd-story-footer {
   width: min(1220px, calc(100% - 48px));
+  min-height: 78px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.story-header {
-  min-height: 82px;
-  border-bottom: 1px solid var(--line);
+/* 去掉顶部黑色横线 */
+.rd-story-header {
+  border: 0 !important;
 }
 
-.story-home-link,
-.story-wordmark,
-.story-footer a {
-  color: var(--muted-cream);
+.rd-story-header a,
+.rd-story-footer a,
+.rd-story-wordmark {
+  color: var(--story-olive-deep);
   text-decoration: none;
 }
 
-.story-page {
-  width: min(960px, calc(100% - 40px));
-  margin: 52px auto 70px;
-  padding: clamp(28px, 6vw, 72px);
-  color: var(--parchment);
-  background: rgba(75, 78, 60, 0.94);
-  border: 1px solid var(--line);
+.rd-story-header a,
+.rd-story-footer a {
+  transition: color .2s ease;
 }
 
-.story-intro {
-  margin-bottom: 48px;
+.rd-story-header a:hover,
+.rd-story-footer a:hover {
+  color: var(--story-brass);
+}
+
+.rd-story-shell {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: 16px auto 64px;
+  padding: clamp(30px, 5vw, 66px);
+  color: var(--story-ink);
+  background:
+    linear-gradient(rgba(255, 255, 255, .14), rgba(255, 255, 255, .14)),
+    var(--story-paper);
+  border: 1px solid rgba(128, 100, 74, .62);
+  box-shadow: 0 16px 48px rgba(49, 48, 39, .1);
+}
+
+/* 外框角饰 */
+.rd-story-shell::before,
+.rd-story-shell::after {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  content: "";
+  pointer-events: none;
+}
+
+.rd-story-shell::before {
+  top: 12px;
+  left: 12px;
+  border-top: 2px solid var(--story-brown);
+  border-left: 2px solid var(--story-brown);
+}
+
+.rd-story-shell::after {
+  right: 12px;
+  bottom: 12px;
+  border-right: 2px solid var(--story-brown);
+  border-bottom: 2px solid var(--story-brown);
+}
+
+.rd-story-intro {
+  position: relative;
+  margin: 0 auto clamp(52px, 7vw, 82px);
   text-align: center;
 }
 
-.story-eyebrow,
-.story-footer {
-  color: var(--antique-gold);
+.rd-story-eyebrow {
+  margin: 0 0 12px;
+  color: var(--story-brown);
+  font-family: var(--script, cursive);
+  font-size: clamp(18px, 2.1vw, 25px);
+  letter-spacing: .12em;
 }
 
-.story-intro h1 {
-  margin: 12px 0;
-  font-size: clamp(36px, 6vw, 60px);
+.rd-story-intro h1 {
+  margin: 0;
+  color: var(--story-brown);
+  font-family: var(--chinese-serif, "LXGW WenKai", "Songti SC", serif);
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 700;
+  letter-spacing: .14em;
 }
 
-.story-lead {
-  color: var(--muted-cream);
+/* 标题下的小装饰 */
+.rd-story-intro h1::after {
+  display: block;
+  width: 118px;
+  height: 15px;
+  margin: 12px auto 28px;
+  color: var(--story-brown);
+  content: "—  ✦  —";
+  font-family: Georgia, serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: .24em;
 }
 
-.story-timeline {
+.rd-story-summary {
   position: relative;
-  display: grid;
-  gap: 18px;
-  max-width: 760px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 42px) clamp(24px, 5vw, 56px);
+  color: var(--story-ink);
+  background:
+    radial-gradient(ellipse at 0 0, rgba(255, 255, 255, .38), transparent 48%),
+    repeating-linear-gradient(90deg, rgba(60, 57, 46, .025) 0 1px, transparent 1px 7px),
+    var(--story-paper-light);
+  border: 1px solid rgba(119, 123, 103, .32);
+  box-shadow:
+    inset 0 0 0 5px rgba(128, 100, 74, .07),
+    7px 9px 0 rgba(49, 48, 39, .08);
+  text-align: left;
+  font-size: clamp(15px, 1.35vw, 18px);
+  line-height: 2;
+  letter-spacing: .025em;
+}
+
+/* 简介纸张角饰，不使用左侧竖线 */
+.rd-story-summary::before,
+.rd-story-summary::after {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  color: var(--story-brown);
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+  content: "✦";
+  opacity: .8;
+}
+
+.rd-story-summary::before {
+  top: 10px;
+  left: 12px;
+}
+
+.rd-story-summary::after {
+  right: 12px;
+  bottom: 6px;
+}
+
+.rd-story-summary p {
+  margin: 0;
+  text-indent: 2em;
+}
+
+.rd-story-summary p + p {
+  margin-top: 1.15em;
+}
+
+.rd-story-lead {
+  margin: 22px 0 0;
+  color: var(--story-ink-soft);
+  font-size: 13px;
+  letter-spacing: .08em;
+}
+
+.rd-story-timeline {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-auto-flow: row !important;
+  gap: 13px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.story-timeline::before {
-  position: absolute;
-  top: 22px;
-  bottom: 22px;
-  left: 13px;
-  width: 1px;
-  background: var(--line);
-  content: "";
-}
-
-.timeline-item {
+/* 章节标题保持浅底，不做棕色标签 */
+.rd-story-season {
   position: relative;
-  margin-left: 46px;
-  border: 1px solid var(--line);
-  background: rgba(48, 36, 28, 0.38);
+  width: fit-content;
+  margin: 38px 0 12px 48px;
+  padding: 8px 0 10px;
+  color: var(--story-olive-deep);
+  font-family: var(--script, cursive);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: .12em;
 }
 
-.timeline-item::before {
+.rd-story-season::after {
   position: absolute;
-  top: 25px;
-  left: -39px;
-  width: 11px;
-  height: 11px;
-  border: 1px solid var(--muted-cream);
-  border-radius: 50%;
-  background: #555844;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--story-brown), transparent);
   content: "";
 }
 
-.timeline-item summary {
-  display: flex;
+.rd-story-season:first-child {
+  margin-top: 0;
+}
+
+.rd-story-event {
+  position: relative;
+  display: block !important;
+  width: auto;
+  min-width: 0;
+  margin: 0 0 0 48px;
+  color: var(--story-ink);
+  background: rgba(255, 255, 255, .3);
+  border: 1px solid rgba(128, 100, 74, .38);
+  box-shadow: 3px 4px 0 rgba(49, 48, 39, .05);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.rd-story-event:hover,
+.rd-story-event[open] {
+  background: rgba(255, 255, 255, .48);
+  border-color: rgba(128, 100, 74, .72);
+}
+
+.rd-story-event:hover {
+  transform: translateY(-1px);
+}
+
+.rd-story-event::before {
+  position: absolute;
+  top: 23px;
+  left: -41px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--story-brown);
+  border-radius: 50%;
+  background: var(--story-paper);
+  box-shadow: 0 0 0 4px var(--story-paper);
+  content: "";
+}
+
+.rd-story-timeline::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 13px;
+  width: 2px;
+  background: linear-gradient(var(--story-brown), rgba(128, 100, 74, .16));
+  content: "";
+}
+
+.rd-story-event summary {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) 100px;
   align-items: center;
   gap: 16px;
-  padding: 20px;
+  width: 100%;
+  min-width: 0;
+  padding: 18px 22px;
   cursor: pointer;
   list-style: none;
 }
 
-.timeline-item summary::-webkit-details-marker {
+.rd-story-event summary::-webkit-details-marker {
   display: none;
 }
 
-.timeline-number {
-  color: var(--antique-gold);
+/* 日期标签保持浅底 */
+.rd-story-date {
+  color: var(--story-brass);
   font-style: italic;
 }
 
-.timeline-title {
-  flex: 1;
-  font-size: 1.15rem;
+/* 事件标题加粗并改成棕色 */
+.rd-story-title {
+  min-width: 0;
+  color: var(--story-brown);
+  font-size: 1.1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
-.timeline-prompt {
-  color: var(--muted-cream);
-  font-size: 0.8rem;
+.rd-story-prompt {
+  color: var(--story-ink-soft);
+  font-size: .82rem;
+  text-align: right;
+  white-space: nowrap;
 }
 
-.timeline-item[open] summary {
-  border-bottom: 1px solid var(--line);
+.rd-story-event[open] summary {
+  border-bottom: 1px solid rgba(119, 123, 103, .22);
 }
 
-.timeline-story {
-  padding: 8px 20px 20px;
-  color: var(--muted-cream);
+.rd-story-copy {
+  padding: 9px 22px 21px;
+  color: var(--story-ink-soft);
   line-height: 1.9;
+  overflow-wrap: anywhere;
 }
 
-.story-footer {
+.rd-story-copy p {
+  margin: 10px 0;
+}
+
+.rd-story-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.rd-story-speaker {
+  color: var(--story-olive-deep);
+}
+
+.rd-story-unfinished {
+  color: var(--story-brass);
+  font-style: italic;
+}
+
+.rd-story-scene {
+  margin: 24px 0 8px;
+  color: var(--story-olive);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.rd-story-footer {
   justify-content: center;
-  min-height: 64px;
-  border-top: 1px solid var(--line);
+  min-height: 68px;
+  border-top: 0;
 }
 
-@media (max-width: 600px) {
-  .story-header,
-  .story-footer {
+@media (max-width: 650px) {
+  .rd-story-header,
+  .rd-story-footer {
     width: calc(100% - 32px);
   }
 
-  .story-page {
-    width: calc(100% - 24px);
-    padding: 30px 18px;
+  .rd-story-shell {
+    width: calc(100% - 20px);
+    padding: 28px 16px 44px;
   }
 
-  .timeline-item {
-    margin-left: 34px;
+  .rd-story-intro h1 {
+    margin-bottom: 0;
   }
 
-  .timeline-item::before {
+  .rd-story-summary {
+    padding: 24px 20px;
+    line-height: 1.9;
+  }
+
+  .rd-story-season,
+  .rd-story-event {
+    margin-left: 36px;
+  }
+
+  .rd-story-event::before {
     left: -30px;
   }
 
-  .story-timeline::before {
+  .rd-story-timeline::before {
     left: 9px;
   }
 
-  .timeline-item summary {
-    flex-wrap: wrap;
-    gap: 8px 12px;
+  .rd-story-event summary {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 6px 12px;
     padding: 16px;
   }
 
-  .timeline-title {
-    flex-basis: 70%;
+  .rd-story-date {
+    grid-column: 1;
+    grid-row: 1;
   }
 
-  .timeline-prompt {
-    margin-left: 36px;
+  .rd-story-title {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .rd-story-prompt {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .rd-story-copy {
+    padding: 8px 16px 18px;
   }
 }

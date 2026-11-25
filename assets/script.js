@@ -1,15 +1,11 @@
 const chapterContent = {
-  story: {
-    title: "我们的故事",
-  },
-  memories: {
-    title: "回忆",
-  },
   wedding: {
     title: "婚礼",
+    copy: "这一章还在整理中。"
   },
   home: {
     title: "家和家人",
+    copy: "这一章还在整理中。"
   }
 };
 
@@ -21,9 +17,7 @@ document.querySelectorAll("[data-chapter]").forEach((card) => {
   card.addEventListener("click", () => {
     const chapter = chapterContent[card.dataset.chapter];
 
-    if (!chapter || !dialog || !dialogTitle || !dialogCopy) {
-      return;
-    }
+    if (!chapter || !dialog || !dialogTitle || !dialogCopy) return;
 
     dialogTitle.textContent = chapter.title;
     dialogCopy.textContent = chapter.copy;
